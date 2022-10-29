@@ -1,0 +1,37 @@
+.signup{
+    border: 1px solid green;
+    border-radius: 10px;
+    width: 500px;
+    margin: 0 auto;
+    background-color:rgb(113, 170, 113)
+
+
+}
+
+#customersignUp{
+    margin-top: 100px;
+
+}
+
+
+/* .form-group{
+    width: 500px;
+} */
+
+#customerUserName{
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#customerPassword{
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#customerPasswordConfirmation{
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
