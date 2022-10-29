@@ -1,9 +1,8 @@
-import './FarmerSignupForm.css'
+import './FarmerSignUpForm.css'
 import {useState} from "react"
-import { json } from 'react-router-dom';
 
 
-function FarmerSignupForm(){
+function FarmerSignUpForm(){
 
     const [username, setUsername] = useState("");
     const [location, setLocation] = useState("")
@@ -122,4 +121,4 @@ function FarmerSignupForm(){
 
 }
 
-export default FarmerSignupForm
+export default FarmerSignUpForm

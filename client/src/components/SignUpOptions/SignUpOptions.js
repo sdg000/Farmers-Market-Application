@@ -1,16 +1,7 @@
-import "./SignupOptions.css"
-import {useState} from "react"
+import "./SignUpOptions.css"
+// import {useState} from "react"
 
 function SignupOptions(){
-
-    // OPTION 1 save signupOption to state
-    const [farmerSignup, setFarmerSignup] = useState('')
-    const [customerSignup, setCustomerSignup] = useState('')
-
-    // if signupOption is farmer, render farmer signup form
-
-
-    // if signupOption is customer, render customer signup form
 
     // OPTION 2: display 2 buttons labelled "Signup as Farmer", "Signup as Customer", on click of each , render corresponding signup form
 
