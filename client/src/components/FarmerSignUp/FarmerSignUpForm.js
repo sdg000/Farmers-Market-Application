@@ -109,11 +109,11 @@ function FarmerSignUpForm(){
             <button type="submit" class="btn btn-primary">Submit</button>
             {/* <div>
                 {errors.map((err) => (
-                    <p key={err}>{err}</p>
+                    <p style="color: red; font-size: 20px;" key={err}>{err}</p>
                 ))}
             </div> */}
         </form>
-        {errors?errors.map(e => <p>{e}</p>):null}
+        {errors?errors.map(e => <p id='error' key={e} >{e}</p>):null}
 
 
         </div>

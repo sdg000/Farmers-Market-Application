@@ -42,3 +42,9 @@
     margin: 0 auto;
     border-radius: 10px;
 }
+
+#error{
+    color: red;
+    font-size: large;
+    font-weight: 500;
+}
