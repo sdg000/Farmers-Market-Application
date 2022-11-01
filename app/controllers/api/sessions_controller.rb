@@ -11,4 +11,10 @@ class Api::SessionsController < ApplicationController
         end
     end
 
+    # custom farmer logout method
+    def farmerlogout
+        session.delete :farmer_id
+        head :no_content
+    end
+
 end

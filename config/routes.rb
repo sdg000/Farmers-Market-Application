@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
     # farmer login
     post "/farmerlogin", to: "sessions#farmerlogin"
+
+    # farmer auto login
+    get "/farmer-auth", to: "farmers#show"
+
+    # farmer logout
+    delete "/farmerlogout", to: "sessions#farmerlogout"
   
 
   end

@@ -1,8 +1,10 @@
 import './FarmerSignUpForm.css'
 import {useState} from "react"
+import {useNavigate} from 'react-router-dom'
 
 
 function FarmerSignUpForm(){
+    let navigate = useNavigate()
 
     const [username, setUsername] = useState("");
     const [location, setLocation] = useState("")
@@ -34,6 +36,7 @@ function FarmerSignUpForm(){
             if (response.ok){
                 return response.json()
                 .then(function(data){
+                    navigate('/farmer-login')
                     console.log(data)
                 })
             }else {

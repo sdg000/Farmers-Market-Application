@@ -1,10 +1,13 @@
 import './FarmerLogin.css'
 import {useState} from "react"
+import {useNavigate} from "react-router-dom"
 
-function FarmerLogin(){
+function FarmerLogin({setCurrentUser, setIsloggedIn}){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
+
+    let navigate = useNavigate()
 
 
     function farmerLogin(e){
@@ -26,6 +29,9 @@ function FarmerLogin(){
             if (response.ok){
                 return response.json()
                 .then(function(data){
+                    setCurrentUser(data)
+                    // setIsloggedIn(true)
+                    navigate('/farmer')
                     console.log(data)
                 })
             }else {

@@ -1,8 +1,16 @@
 import './UserNavBar.css'
 
-function UserNavBar({currentUser}){
+function UserNavBar({currentUser, onLogout}){
+
+    function logout(){
+        console.log("logout")
+        fetch("/api/farmerlogout", {
+            method: "DELETE"
+        }).then(() => onLogout())
+
+    }
     return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id='navbar'>
         <a class="navbar-brand" id='navbar-brand' href="/">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl0hCmhn0Qm3Qd5oTot0UVRX1bFPt4BCQ3QA&usqp=CAU" width="60" height="60" alt="xx"/>
             Farmers Market
@@ -18,9 +26,6 @@ function UserNavBar({currentUser}){
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="signout">Signout</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="view-products">View Your Products</a>
                 </li>
 
@@ -30,9 +35,11 @@ function UserNavBar({currentUser}){
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> */}
-            <a class="nav-link" href="signout">Signout</a>
+            <a id="nav-link" onClick={logout}>Signout</a>
+            {/* <button type="submit" class="btn btn-primary">Submit</button> */}
 
-            <h1>#{currentUser.username}</h1>
+
+            <h2>{currentUser.username}</h2>
         </div>
     </nav>
     )
