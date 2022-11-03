@@ -26,7 +26,7 @@ function UserNavBar({currentUser, onLogout}){
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="view-products">View Your Products</a>
+                    <a class="nav-link" href="/farmer">My Page</a>
                 </li>
 
 

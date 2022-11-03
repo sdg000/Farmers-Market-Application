@@ -7,3 +7,8 @@
     font-weight: 500;
     font-size: x-large;
 }
+
+.searchbutton {
+    border: 1px solid green;
+    border-radius: 10px;
+}

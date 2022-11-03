@@ -6,6 +6,7 @@ function CustomerSignUpForm(){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [errors, setErrors] = useState([])
   
 
 
@@ -25,10 +26,10 @@ function CustomerSignUpForm(){
     }
 
     return (
-        <div class="signup" id="customersignUp">
-        <h2>Sign up as a customer</h2>
-        <form onSubmit={HandleSubmitCustomer}>
-            <div class="form-group">
+        <div class='customersignup'>
+                    <h2 class='customer-signup-header'>Sign up as a customer</h2>
+        <form class='customer-signup-form' onSubmit={HandleSubmitCustomer}>
+            <div class="customer-form-group">
                 <label for="customerUserName">Customer Username</label>
                 <input 
                     type="text" 
@@ -64,8 +65,10 @@ function CustomerSignUpForm(){
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="customer-signup-button">Submit</button>
         </form>
+        {errors?errors.map(e => <p id='customer-signup-error' key={e} >{e}</p>):null}
+
 
         </div>
     )

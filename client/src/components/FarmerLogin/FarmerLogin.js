@@ -46,42 +46,54 @@ function FarmerLogin({setCurrentUser, setIsloggedIn}){
 
         setUsername('')
         setPassword('')
+    }
 
+    function showPassword(){
+        let pass = document.getElementById("farmerloginPassword")
+        if (pass.type === "password") {
+            pass.type = "text"
+        }else {
+            pass.type = "password"
+        }
     }
 
     return (
-        <div class="bg-img">
-            <form class="farmer-login" onSubmit={farmerLogin}>
-                <h1>Farmer Login</h1>
-                <label>Username</label>
+        <div class='farmer-login'>
+            <h1 class='farmer-login-header'>Farmer Login</h1>
+
+            <form onSubmit={farmerLogin} class='farmer-login-form'>
+            <div class="form-group">
+                <label for="farmerUserName">Farmer Username</label>
                 <input 
                     type="text" 
-                    // class="form-control" 
-                    // id="farmerUserName" 
-                    // aria-describedby="emailHelp" 
-                    placeholder="Enter Username"
+                    class="form-control" 
+                    id="farmerloginUserName" 
+                    aria-describedby="emailHelp" 
+                    placeholder="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    required
                 />
-                <br/>
-                <label>Password</label>
+            </div>
+
+            <div class="form-group">
+                <label for="farmerloginPassword">Password</label>
                 <input 
                     type="password" 
-                    // class="form-control" 
-                    // id="farmerUserName" 
-                    // aria-describedby="emailHelp" 
-                    placeholder="Enter Password"
+                    class="form-control" 
+                    id="farmerloginPassword" 
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
                 />
-                <button type="submit" class="login-btn">Login</button>
-                {errors?errors.map(e => <p id='login-error' key={e} >{e}</p>):null}
+                <input id='showfarmerPass' type="checkbox" onClick={showPassword}/>  Show Password
 
+            </div>
+            <button type="submit" class="farmer-login-btn">Login</button>
             </form>
+            {errors?errors.map(e => <p id='farmer-login-error' key={e} >{e}</p>):null}
 
         </div>
+
     )
 }
 

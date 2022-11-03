@@ -1,67 +1,92 @@
-body {
-    height: 100%;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .bg-img {
-    /* The image used */
-    background-image: url("https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?cs=srgb&dl=pexels-scott-webb-305821.jpg&fm=jpg&_gl=1*rb5kl0*_ga*MTM3NTk3ODA0Ny4xNjY0NjU2ODIz*_ga_8JE65Q40S6*MTY2Njk4MTAyNy4zLjEuMTY2Njk4MTQ4MS4wLjAuMA..");
-    /* width: 100%;
-    height: auto; */
-  
-    /* Control the height of the image */
-    min-height: 380px;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
-  
-  /* Add styles to the form container */
-  .farmer-login {
-    position: absolute;
-    left: 0;
-    margin: 10px;
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-  }
-  
-  /* Full-width input fields */
-    input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
-  
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Set a style for the submit button */
-  .login-btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-  }
-  
-  .login-btn:hover {
-    opacity: 1;
-  }
+.farmer-login{
+  /* border: 1px solid green;
+  border-radius: 10px;
+  width: 500px; */
+  /* margin: 0 auto; */
+  /* background-color:rgb(113, 170, 113) */
 
-  #login-error {
-    color: red;
-    font-size: larger;
-  }
+  background-image: url("https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?cs=srgb&dl=pexels-scott-webb-305821.jpg&fm=jpg&_gl=1*rb5kl0*_ga*MTM3NTk3ODA0Ny4xNjY0NjU2ODIz*_ga_8JE65Q40S6*MTY2Njk4MTAyNy4zLjEuMTY2Njk4MTQ4MS4wLjAuMA..");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+}
+
+
+.farmer-login-form {
+  border: 3px solid green;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  width: fit-content;
+  /* height: 600px; */
+
+
+
+
+}
+
+/* input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+} */
+
+  
+/* input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+} */
+
+
+#farmerloginUserName{
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+
+
+}
+
+
+#farmerloginPassword{
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+
+
+}
+
+#farmer-login-error {
+  color: red;
+  font-size: larger;
+}
+
+#showfarmerPass {
+  cursor: pointer;
+}
+
+
+.farmer-login-btn{
+  border: 1px solid green;
+  border-radius: 5px;
+  width: 100px;
+
+}
+
+button:focus{
+  background-color: green;
+  color: white;
+}
+
+
+.farmer-login-header{
+  color: green;
+
+}
+

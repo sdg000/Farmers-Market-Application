@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
     resources :farmers, only: :index
     # resources :reviews
-    # resources :products
+
+    resources :products
+    
     # resources :customers
   
     # farmer signup

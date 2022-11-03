@@ -1,0 +1,8 @@
+/* *{box-sizing: border-box;} */
+
+.allfarmerproducts{
+    /* position: inherit; */
+    float: right;
+    margin-right: 1130px;
+    background-color: red;
+}

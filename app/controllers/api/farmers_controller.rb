@@ -2,8 +2,8 @@ class Api::FarmersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
 
     # authorization
-    before_action :require_login
-    skip_before_action :require_login, only: [:create, :show]
+    before_action :require_farmer_login
+    skip_before_action :require_farmer_login, only: [:create, :show]
 
 
     # return all farmers
@@ -42,6 +42,12 @@ class Api::FarmersController < ApplicationController
     
         render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
     end
+  
+    def require_farmer_login  
+    #   render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :farmer_id
+    end
+
   
 
 end

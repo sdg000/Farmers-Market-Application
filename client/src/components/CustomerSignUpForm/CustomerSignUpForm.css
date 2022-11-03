@@ -1,37 +1,72 @@
-.signup{
-    border: 1px solid green;
+.customersignup{
+    /* border: 1px solid green;
     border-radius: 10px;
-    width: 500px;
-    margin: 0 auto;
-    background-color:rgb(113, 170, 113)
+    width: 500px; */
+    /* margin: 0 auto; */
+    /* background-color:rgb(113, 170, 113) */
 
+    background-image: url("https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?cs=srgb&dl=pexels-scott-webb-305821.jpg&fm=jpg&_gl=1*rb5kl0*_ga*MTM3NTk3ODA0Ny4xNjY0NjU2ODIz*_ga_8JE65Q40S6*MTY2Njk4MTAyNy4zLjEuMTY2Njk4MTQ4MS4wLjAuMA..");
 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  
 }
-
-#customersignUp{
-    margin-top: 100px;
-
-}
-
-
-/* .form-group{
-    width: 500px;
-} */
 
 #customerUserName{
-    width: 450px;
+    width: 400px;
     margin: 0 auto;
     border-radius: 10px;
 }
 
+
 #customerPassword{
-    width: 450px;
+    width: 400px;
     margin: 0 auto;
     border-radius: 10px;
 }
 
 #customerPasswordConfirmation{
-    width: 450px;
+    width: 400px;
     margin: 0 auto;
     border-radius: 10px;
+}
+
+
+.customer-signup-form{
+    border: 3px solid green;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+    /* margin-top: 30px; */
+    width: fit-content;
+    /* align-content: center; */
+    /* position: relative; */
+
+}
+
+.customer-signup-header{
+    color: green;
+
+}
+
+.customer-signup-button {
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: green;
+    color: white;
+}
+
+
+#customer-signup-error{
+    color: red;
+    font-size: large;
+    font-weight: 500;
 }
