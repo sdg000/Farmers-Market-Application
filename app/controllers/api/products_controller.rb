@@ -5,10 +5,17 @@ class Api::ProductsController < ApplicationController
 
 
 
+    # create product for a specific farmer
     def create
         product = @current_farmer.products.create!(product_params)
         render json: product, status: :created
+    end
 
+    # delete product from farmer's list of products
+    def destroy
+        product = @current_farmer.products.find_by(id: params[:id])
+        product.destroy
+        head :no_content
     end
 
     private
@@ -24,6 +31,7 @@ class Api::ProductsController < ApplicationController
         return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :farmer_id
     end
 
+    # handle allowed parameter errors
     def render_invalid_response(exceptions)
         render json: { errors: exceptions.record.errors.full_messages }, status: :unprocessable_entity
     end

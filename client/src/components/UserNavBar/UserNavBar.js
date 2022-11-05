@@ -2,7 +2,7 @@ import React from 'react'
 import './UserNavBar.css'
 import {useNavigate} from "react-router-dom"
 
-function UserNavBar({currentUser, onLogout}){
+function UserNavBar({currentFarmer, onLogout}){
 
     let navigate = useNavigate()
 
@@ -17,6 +17,14 @@ function UserNavBar({currentUser, onLogout}){
     function newProduct(){
         navigate('/farmer/new-product')
     }
+
+    function goToFarmerPage(){
+        navigate('/farmer-page')
+
+    }
+
+
+
     return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id='navbar'>
         <a class="navbar-brand" id='navbar-brand' href="/">
@@ -34,14 +42,14 @@ function UserNavBar({currentUser, onLogout}){
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/farmer/products">My Products</a>
+                    <a class="nav-link" onClick={goToFarmerPage} id='gotofarmerpage'>My Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id='postnewproduct' onClick={newProduct}>Post Product</a>
                 </li>
             </ul>
             <a id="nav-link" onClick={logout}>Signout</a>
-            <h2>{currentUser.username}</h2>
+            <h2>{currentFarmer.username}</h2>
         </div>
     </nav>
     )

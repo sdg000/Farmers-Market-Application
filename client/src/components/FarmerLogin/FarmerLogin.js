@@ -2,7 +2,7 @@ import './FarmerLogin.css'
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 
-function FarmerLogin({setCurrentUser, currentUser}){
+function FarmerLogin({setCurrentFarmer, setDisplayFarmerProducts}){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
@@ -36,9 +36,10 @@ function FarmerLogin({setCurrentUser, currentUser}){
             if (response.ok){
                 return response.json()
                 .then(function(data){
-                    setCurrentUser(data)
-                    // navigate('/farmer-page')
+                    setCurrentFarmer(data)
+                    // if farmer has products
                     if (data.products.length > 0){
+                        setDisplayFarmerProducts(data.products)
                         navigate('/farmer-page')
                     }else {
                         navigate('/new-farmer')

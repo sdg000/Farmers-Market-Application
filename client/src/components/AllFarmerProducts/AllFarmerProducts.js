@@ -1,6 +1,6 @@
 import './AllFarmerProducts.css'
 
-function AllFarmerProducts({product}){
+function AllFarmerProducts({product, ondelete}){
     // console.log(product.id)
     // destructure products
     const {id, name, image_url, category, price} = product
@@ -9,7 +9,14 @@ function AllFarmerProducts({product}){
 
     function showid(){
         // console.log(e.currentTarget)
-        console.log(id)
+        // console.log(id)
+        fetch(`/api/products/${id}`, {
+            method: "DELETE",
+        }).then(function(response){
+            if (response.ok){
+                ondelete(id)
+            }
+        })
     }
 
 
@@ -19,9 +26,9 @@ function AllFarmerProducts({product}){
             <h4>{name}</h4>
             {/* <h4>{category}</h4> */}
             <p>Price: Ghc {price}</p>
-            <button id='edit-product-btn' onClick={showid}>Edit </button>
+            <button id='edit-product-btn'>Edit </button>
 
-            <button id='delete-product-btn'>Delete</button>
+            <button id='delete-product-btn' onClick={showid}>Delete</button>
 
 
         </li>

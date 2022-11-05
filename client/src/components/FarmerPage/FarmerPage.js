@@ -4,61 +4,52 @@ import AllFarmerProducts from '../AllFarmerProducts/AllFarmerProducts'
 import FarmerCreateProductForm from '../FarmerCreateProductForm/FarmerCreateProductForm'
 import FarmerAlert from '../FarmerAlert/FarmerAlert'
 
-function FarmerPage({currentUser}) {
-    // const [userWithProducts, setUserWithProducts] = useState(currentUser.products)
+function FarmerPage({currentFarmer, displayFarmerProducts, setDisplayFarmerProducts}) {
+        // const [farmerProducts, setFarmerProducts] = useState(currentUser)
 
-    // const [action, setAction] = useState(false)
-
-    // destructuring {currentUser}
-    // if (currentUser){
-    //     const {id, username, location, products} = currentUser
-
-    // }
-
-    // currentUser.products.map((product) => {
-    //     <AllFarmerProducts key={product.id} product={product}/>
-    // })
+    // const {id, username, location, products} =  currentFarmer
+    // const {id, username, location, products} =  displayFarmerProducts
 
 
+    // const [allproducts, setProducts] = useState(products)
 
-
-
-    // if (products){
-    //     products.map((product) => {
-    //         <AllFarmerProducts key={product.id} product={product}/>
-    //     })
-    // }
-
-
-
-
-    // console.log(currentUser.products)
-
-    // function sendFarmerProducts(){
-    //     if (products){
-    //         products.map((product) => {
-    //             <AllFarmerProducts
-    //             key={product.id}
-    //             product={product}
-
-                
-    //         />
-
-    //         })
-    
-    //     }
-
-    // }
+    // function to filter out deleted product using product.id
+    function removeDeletedPlant(id){
+        const productsMinustDeletedProduct =  displayFarmerProducts.filter((product) => product.id !== id)
+        setDisplayFarmerProducts(productsMinustDeletedProduct)
+    }
 
 
 
     return (
         <>
-            {currentUser.products?currentUser.products.map((product) => {
+            {/* {currentUser.products?currentUser.products.map((product) => {
                 return (
                     <AllFarmerProducts key={product.id} product={product}/>
                 )
+            }):null} */}
+
+            {/* {allproducts?allproducts.map((product) => {
+                return (
+                    <AllFarmerProducts 
+                        key={product.id} 
+                        product={product}
+                        ondelete={removeDeletedPlant}
+                    />
+                )
+            }):null} */}
+
+            {displayFarmerProducts?displayFarmerProducts.map((product) => {
+                return (
+                    <AllFarmerProducts 
+                        key={product.id} 
+                        product={product}
+                        ondelete={removeDeletedPlant}
+                    />
+                )
             }):null}
+
+
 
         </>
 
