@@ -3,7 +3,7 @@ class Api::FarmersController < ApplicationController
 
     # authorization
     before_action :require_farmer_login
-    skip_before_action :require_farmer_login, only: [:create, :show]
+    skip_before_action :require_farmer_login, only: [:create, :show, :index]
 
 
     # return all farmers
@@ -37,11 +37,11 @@ class Api::FarmersController < ApplicationController
         render json: { errors: exceptions.record.errors.full_messages }, status: :unprocessable_entity
     end
 
-    def require_login
-        # @current_user = User.find_by(id: session[:user_id])
+    # def require_login
+    #     # @current_user = User.find_by(id: session[:user_id])
     
-        render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
-    end
+    #     render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
+    # end
   
     def require_farmer_login  
     #   render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user

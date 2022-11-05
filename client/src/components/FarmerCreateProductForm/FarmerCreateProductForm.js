@@ -13,11 +13,36 @@ function FarmerCreateProductForm({currentUser}){
     // function to handle creating ProductPage
     function handleCreateProduct(e){
         e.preventDefault()
-        console.log(category)
-        console.log(name)
-        console.log(price)
 
-        // fetch('/api/')
+        fetch('/api/products', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                category,
+                image_url,
+                price,
+            })
+        })
+        .then(function(response){
+            if (response.ok){
+                return response.json()
+                .then(function(data){
+                    console.log(data)
+                })
+            }else {
+                return response.json()
+                .then(function(error){
+                    setErrors(error.errors)
+                })
+            }
+        })
+        setName('')
+        setCategory('')
+        setImageUrl('')
+        setPrice('')
 
     }
 
@@ -36,20 +61,23 @@ function FarmerCreateProductForm({currentUser}){
                         placeholder='Product name'
                         value={name}
                         onChange={(e)=> setName(e.target.value)}
-                        required
                     />
                 </div>
                 <div class='form-group'>
                     <label>Category</label>
-                    <input
-                        text='text'
-                        class='form-control'
-                        id='newproductcategory'
-                        placeholder='Category'
-                        value={category}
-                        onChange={(e)=> setCategory(e.target.value)}
-                        required
-                    />
+                    <select id='newproductcategory' value={category} onChange={(e) => setCategory(e.target.value)} class='form-control'>
+                        <option id='categoryoptions'>select product category</option>
+                        <option>Vegetable</option>
+                        <option>Cereal</option>
+                        <option>Livestock</option>
+                        <option>Fruit</option>
+                        <option>Tuber</option>
+                        <option>Food</option>
+                        <option>Diary</option>
+
+
+                    </select>
+
                 </div>
 
                 <div class='form-group'>
@@ -78,9 +106,8 @@ function FarmerCreateProductForm({currentUser}){
                     />
                 </div>
                 <button id='post-new-product-btn' type="submit">Submit</button>
-
-
             </form>
+            {errors?errors.map(e => <p id='new-product-error' key={e} >{e}</p>):null}
 
 
         </div>

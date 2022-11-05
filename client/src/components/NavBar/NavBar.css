@@ -1,6 +1,7 @@
 .navbar{
     height: 100px;
     border: 1px solid green;
+    width: 100vw;
 }
 #navbar-brand{
     color: green;
@@ -11,4 +12,8 @@
 .searchbutton {
     border: 1px solid green;
     border-radius: 10px;
+}
+
+#postnewproduct{
+    cursor: pointer;
 }

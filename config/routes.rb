@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   
-  resources :farmers
   # seperating REST routes from custom routes using Namespacing
   namespace :api do
-  
-    resources :farmers, only: :index
-    # resources :reviews
 
     resources :products
-    
+
+    resources :farmers, only: :index
+
+    # resources :reviews
+
     # resources :customers
   
     # farmer signup

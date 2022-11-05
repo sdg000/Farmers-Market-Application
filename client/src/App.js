@@ -13,6 +13,8 @@ import CustomerSignUpForm from './components/CustomerSignUpForm/CustomerSignUpFo
 import FarmerLogin from './components/FarmerLogin/FarmerLogin'
 import CustomerLogin from './components/CustomerLogin/CustomerLogin'
 import FarmerPage from './components/FarmerPage/FarmerPage';
+import FarmerAlert from './components/FarmerAlert/FarmerAlert';
+import FarmerCreateProductForm from './components/FarmerCreateProductForm/FarmerCreateProductForm';
 
 
 
@@ -41,7 +43,17 @@ function App() {
         .then(function(data){
           // setIsloggedIn(true)
           setCurrentUser(data)
-          // navigate('/farmer')
+          if (data.products.length > 0){
+            navigate('/farmer-page')
+
+          }else {
+            navigate('/new-farmer')
+          }
+
+
+          // if(currentUser.products){
+          //   navigate('farmer/products')
+          // }
 
         })
       }else {
@@ -63,6 +75,7 @@ function App() {
         {/* {isLoggedIn?<UserNavBar currentUser={currentUser} onLogout={handleLogout}/>:<NavBar/>} */}
         {/* {isLoggedIn?null:<About/>} */}
         {currentUser? <UserNavBar currentUser={currentUser} onLogout={handleLogout} />:<NavBar/>}
+        {/* {currentUser.products? <FarmerAlert currentUser={currentUser}/>:null} */}
         <Routes>
         <Route exact path='/' element={<ProductPage/>}>
 
@@ -81,15 +94,29 @@ function App() {
         <Route exact path='customer-signup' element={<CustomerSignUpForm/>}>
 
         </Route>
-        <Route exact path='farmer-login' element={<FarmerLogin  setCurrentUser={setCurrentUser}/>}>
+        <Route exact path='farmer-login' element={<FarmerLogin  setCurrentUser={setCurrentUser} currentUser={currentUser}/>}>
 
         </Route>
         <Route exact path='customer-login' element={<CustomerLogin/>}>
 
         </Route>
-        <Route exact path='farmer' element={<FarmerPage currentUser={currentUser}/>}>
+        <Route exact path='farmer-page' element={<FarmerPage currentUser={currentUser}/>}>
 
         </Route>
+
+        <Route exact path='new-farmer' element={<FarmerAlert currentUser={currentUser}/>}>
+
+        </Route>
+        <Route exact path='farmer/products' element={<FarmerPage currentUser={currentUser}/>}>
+
+        </Route>
+        <Route exact path='farmer/new-product' element={<FarmerCreateProductForm currentUser={currentUser}/>}>
+
+        </Route>
+
+
+
+
 
 
 

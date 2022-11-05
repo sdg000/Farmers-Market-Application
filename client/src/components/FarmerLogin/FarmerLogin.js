@@ -2,10 +2,17 @@ import './FarmerLogin.css'
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 
-function FarmerLogin({setCurrentUser, setIsloggedIn}){
+function FarmerLogin({setCurrentUser, currentUser}){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
+
+    // Using Products to determine old and new users
+    // let products = currentUser.products
+    
+    // const {id, username, location, products} = currentUser
+
+
 
     let navigate = useNavigate()
 
@@ -30,9 +37,12 @@ function FarmerLogin({setCurrentUser, setIsloggedIn}){
                 return response.json()
                 .then(function(data){
                     setCurrentUser(data)
-                    // setIsloggedIn(true)
-                    navigate('/farmer')
-                    console.log(data)
+                    // navigate('/farmer-page')
+                    if (data.products.length > 0){
+                        navigate('/farmer-page')
+                    }else {
+                        navigate('/new-farmer')
+                    }
                 })
             }else {
                 return response.json()
@@ -63,7 +73,7 @@ function FarmerLogin({setCurrentUser, setIsloggedIn}){
 
             <form onSubmit={farmerLogin} class='farmer-login-form'>
             <div class="form-group">
-                <label for="farmerUserName">Farmer Username</label>
+                <label>Farmer Username</label>
                 <input 
                     type="text" 
                     class="form-control" 
@@ -76,7 +86,7 @@ function FarmerLogin({setCurrentUser, setIsloggedIn}){
             </div>
 
             <div class="form-group">
-                <label for="farmerloginPassword">Password</label>
+                <label>Password</label>
                 <input 
                     type="password" 
                     class="form-control" 
