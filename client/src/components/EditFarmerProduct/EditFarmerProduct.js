@@ -48,7 +48,7 @@ function EditFarmerProduct({setShowEditForm, id, oldName, oldCategory, oldImage_
 
     return (
         <div class='product-edit-form'>
-            <h1 class='newproducterror-header'>Edit product</h1>
+            <h1 id='edit-product-header'>Edit product</h1>
             <form  class='edit-form' onSubmit={handleEditProduct}>
                 <div class='form-group'>
                     <label>Product Name</label>
@@ -103,8 +103,8 @@ function EditFarmerProduct({setShowEditForm, id, oldName, oldCategory, oldImage_
                         onChange={(e) => setPrice(e.target.value)}
                     />
                 </div>
-                <button id='post-new-product-btn' type="submit">Submit</button>
-                <button id='post-new-product-btn' onClick={closeEditForm}>Cancel</button>
+                <button id='edit-submit-btn' type="submit">Submit</button>
+                <button id='edit-cancel-btn' onClick={closeEditForm}>Cancel</button>
 
             </form>
             {errors?errors.map(e => <p id='edit-product-error' key={e} >{e}</p>):null}

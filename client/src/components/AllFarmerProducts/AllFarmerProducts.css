@@ -1,13 +1,13 @@
 /* *{box-sizing: border-box;} */
 
-body{
+/* body{
     height: auto;
 
-    /* display: flex; */
-    /* height: 100%; */
-    /* height: inherit; */
+    display: flex;
+    height: 100%;
+    height: inherit;
 
-}
+} */
 
 
 .card{
@@ -26,7 +26,9 @@ body{
     padding: 5px; */
 
     margin: 1rem;
-    display: -webkit-inline-box;
+    /* display: -webkit-inline-box; */
+    /* display: inline-block; */
+    display: table-row;
     float: left;
     border: 1px solid green;
 

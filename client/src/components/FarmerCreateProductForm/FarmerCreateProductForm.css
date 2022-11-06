@@ -64,3 +64,40 @@
     font-size: large;
     font-weight: 500;
 }
+
+/* ............... */
+
+#create-product-header{
+    /* display: flex;
+    justify-content: center; */
+    color: green;
+    /* align-items: center; */
+    /* margin-right: 450px; */
+
+}
+
+#post-new-product-btn{
+    color: green;
+    margin-right: 10px;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+
+#cancel-post-new-btn{
+    color: green;
+    margin-right: 10px;
+    border: 1px solid green;
+    border-radius: 10px;
+
+}
+
+#cancel-post-new-btn:hover{
+    background-color: green;
+    color: white;
+}
+
+#post-new-product-btn:hover{
+    background-color: green;
+    color: white;
+
+}

@@ -2,8 +2,13 @@ class Api::ProductsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
 
     before_action :require_farmer_login
+    skip_before_action :require_farmer_login, only: [:index]
 
 
+    # GET all products without login
+    def index
+        render json: Product.all
+    end
 
     # create product for a specific farmer
     def create

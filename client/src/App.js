@@ -1,5 +1,5 @@
 import './App.css';
-import {useEffect, useState} from "react";
+import {startTransition, useEffect, useState, useSyncExternalStore} from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from './components/NavBar/NavBar'
 import UserNavBar from './components/UserNavBar/UserNavBar';
@@ -21,20 +21,21 @@ import FarmerCreateProductForm from './components/FarmerCreateProductForm/Farmer
 
 
 function App() {
+
+  //saving useNavigate to variable
+  let navigate = useNavigate()
+
+
   //keeping track of current loggedin Farmer
   const [currentFarmer, setCurrentFarmer] = useState('')
 
   //keeping track of current users posted products for Display purposes
   const [displayFarmerProducts, setDisplayFarmerProducts] = useState([])
 
-  let navigate = useNavigate()
+  //keeping track of all Products
+  const [allProducts, setAllProducts] = useState([])
 
-  // set isLoggedIn, setIslogged : to track user log in.....default(false)
-  // if isloggedIn true, render NavBar with (user Props) to Display User info , 
-  //   ...toggle isloggedIn on/off based on succesful user login (FarmerLogin and CustomerLogin)
-  //     On succesful login, set isLoggedIn to true , pass user data to currentUser prop => back to App, use that to render Logged in NavBar or General NavBar
-  
-  // else render general NavBar showing all headers
+
 
 
   // autologin on Refresh
@@ -54,22 +55,26 @@ function App() {
             navigate('/new-farmer')
           }
 
-
-          // if(currentUser.products){
-          //   navigate('farmer/products')
-          // }
-
         })
       }else {
         navigate('/')
       }
     })
 
+    // On App start, fetch all products for display in <ProductPage/>
+    fetch('/api/products')
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      setAllProducts(data)
+    })
+
+
   }, [])
 
   function handleLogout(){
     setCurrentFarmer(null)
-    // setIsloggedIn(false)
     navigate('/')
   }
 
@@ -81,7 +86,7 @@ function App() {
         {currentFarmer? <UserNavBar currentFarmer={currentFarmer} onLogout={handleLogout} />:<NavBar/>}
         {/* {currentUser.products? <FarmerAlert currentUser={currentUser}/>:null} */}
         <Routes>
-        <Route exact path='/' element={<ProductPage/>}>
+        <Route exact path='/' element={<ProductPage allProducts={allProducts}/>}>
 
         </Route>
         <Route exact path='login' element={<LoginOptions/>}>

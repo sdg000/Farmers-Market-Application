@@ -1,14 +1,24 @@
 import ProductPage from '../ProductPage/ProductPage'
 import './FarmerCreateProductForm.css'
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function FarmerCreateProductForm({currentUser}){
+    let navigate = useNavigate()
 
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
     const [image_url, setImageUrl] = useState('')
     const [price, setPrice] = useState('')
     const [errors, setErrors] = useState([])
+
+
+    // close new product form
+    function closeEditForm(){
+        // setCloseNewProductForm(false)
+        navigate('/farmer-page')
+    }
+
 
     // function to handle creating ProductPage
     function handleCreateProduct(e){
@@ -50,7 +60,7 @@ function FarmerCreateProductForm({currentUser}){
 
     return (
         <div class='container-fluid'>
-            <h1 class='newproducterror-header'>Post new product</h1>
+            <h1 id='create-new-product-header'>Post new product</h1>
             <form onSubmit={handleCreateProduct} class='newproduct'>
                 <div class='form-group'>
                     <label>Product Name</label>
@@ -106,6 +116,8 @@ function FarmerCreateProductForm({currentUser}){
                     />
                 </div>
                 <button id='post-new-product-btn' type="submit">Submit</button>
+                <button id='cancel-post-new-btn' onClick={closeEditForm}>Cancel</button>
+
             </form>
             {errors?errors.map(e => <p id='new-product-error' key={e} >{e}</p>):null}
 

@@ -4,9 +4,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    float: left;
+    float: none;
     height: 100vh;
     width: 100vw;
+    position: relative;
+    /* margin: auto; */
+    /* display: flex; */
+    /* justify-content: center; */
+
 
 }
 
@@ -63,4 +68,39 @@
     color: red;
     font-size: large;
     font-weight: 500;
+}
+
+#edit-product-header{
+    /* display: flex;
+    justify-content: center; */
+    color: green;
+    /* align-items: center; */
+    margin-right: 450px;
+
+}
+
+#edit-submit-btn{
+    color: green;
+    margin-right: 10px;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+
+#edit-cancel-btn{
+    color: green;
+    margin-right: 10px;
+    border: 1px solid green;
+    border-radius: 10px;
+
+}
+
+#edit-cancel-btn:hover{
+    background-color: green;
+    color: white;
+}
+
+#edit-submit-btn:hover{
+    background-color: green;
+    color: white;
+
 }

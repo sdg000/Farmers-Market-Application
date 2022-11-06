@@ -1,4 +1,57 @@
-.card{
-    width: 80px;
-    height: 100hv;
+
+.allproducts{
+    margin: 1rem;
+    /* display: -webkit-inline-box; */
+    /* display: inline-block; */
+    display: table-row;
+    float: left;
+    border: 1px solid green;
+
+    
+
+
 }
+
+.allProducts img {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .allProducts {
+      width: calc(33% - 1rem);
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .allProducts {
+      width: calc(25% - 1rem);
+    }
+}
+  
+@media (min-width: 1200px) {
+    .allProducts {
+      width: calc(15% - 1rem);
+    }
+}
+
+#buy-product-btn{
+    /* margin-right: 35px; */
+    padding-bottom: 1px;
+    /* border-color: green; */
+    width: 95px;
+    background-color: rgb(144, 184, 144);
+    color: white;
+    border: none;
+    margin-top: 5px;
+}
+
+#buy-product-btn:hover {
+    background-color: green;
+}
+
+  
+  
+
+  
+
