@@ -5,18 +5,20 @@ import FarmerCreateProductForm from '../FarmerCreateProductForm/FarmerCreateProd
 import FarmerAlert from '../FarmerAlert/FarmerAlert'
 
 function FarmerPage({currentFarmer, displayFarmerProducts, setDisplayFarmerProducts}) {
-        // const [farmerProducts, setFarmerProducts] = useState(currentUser)
-
-    // const {id, username, location, products} =  currentFarmer
-    // const {id, username, location, products} =  displayFarmerProducts
-
-
-    // const [allproducts, setProducts] = useState(products)
 
     // function to filter out deleted product using product.id
     function removeDeletedPlant(id){
-        const productsMinustDeletedProduct =  displayFarmerProducts.filter((product) => product.id !== id)
-        setDisplayFarmerProducts(productsMinustDeletedProduct)
+        const updatedProducts =  displayFarmerProducts.filter((product) => product.id !== id)
+        setDisplayFarmerProducts(updatedProducts)
+    }
+
+    // function to handle updated product
+    function handleUpdatedProduct(editedProduct){
+        const updatedProducts = displayFarmerProducts.map((product) => {
+            return product.id === editedProduct.id? editedProduct:product
+        })
+        setDisplayFarmerProducts(updatedProducts)
+
     }
 
 
@@ -45,6 +47,7 @@ function FarmerPage({currentFarmer, displayFarmerProducts, setDisplayFarmerProdu
                         key={product.id} 
                         product={product}
                         ondelete={removeDeletedPlant}
+                        onupdate={handleUpdatedProduct}
                     />
                 )
             }):null}

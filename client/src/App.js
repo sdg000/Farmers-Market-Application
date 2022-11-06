@@ -111,12 +111,13 @@ function App() {
         <Route exact path='new-farmer' element={<FarmerAlert currentFarmer={currentFarmer}/>}>
 
         </Route>
-        {/* <Route exact path='farmer/products' element={<FarmerPage currentUser={currentUser}/>}>
-
-        </Route> */}
         <Route exact path='farmer/new-product' element={<FarmerCreateProductForm currentFarmer={currentFarmer}/>}>
 
         </Route>
+        {/* <Route exact path='' element={<FarmerPage currentUser={currentUser}/>}>
+
+        </Route> */}
+
 
 
 

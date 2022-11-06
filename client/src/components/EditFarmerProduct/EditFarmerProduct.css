@@ -1,0 +1,66 @@
+
+.product-edit-form {
+    background-image: url("https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?cs=srgb&dl=pexels-scott-webb-305821.jpg&fm=jpg&_gl=1*rb5kl0*_ga*MTM3NTk3ODA0Ny4xNjY0NjU2ODIz*_ga_8JE65Q40S6*MTY2Njk4MTAyNy4zLjEuMTY2Njk4MTQ4MS4wLjAuMA..");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+
+
+.edit-form {
+    /* position: relative; */
+    /* margin-top: 10px; */
+    /* margin-bottom:60px;
+    margin-left: 230px; */
+    /* width: auto; */
+
+    /* padding: 10px; */
+    /* background-color: white; */
+    /* border: 1px solid green; */
+    border: 3px solid green;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: fit-content;
+}
+
+
+#editname{
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#editcategory{
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#editimageurl{
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+
+#editInput{
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+#edit-product-error{
+    color: red;
+    font-size: large;
+    font-weight: 500;
+}

@@ -11,12 +11,22 @@ class Api::ProductsController < ApplicationController
         render json: product, status: :created
     end
 
+    #update farmer's specific product using product.id
+    def update
+        product = @current_farmer.products.find_by(id: params[:id])
+        product.update!(product_params)
+        render json: product, status: :accepted
+    end
+
+
     # delete product from farmer's list of products
     def destroy
         product = @current_farmer.products.find_by(id: params[:id])
         product.destroy
         head :no_content
     end
+
+
 
     private
     
