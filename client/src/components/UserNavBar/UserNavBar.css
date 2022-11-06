@@ -16,16 +16,21 @@
 
 #gotofarmerpage{
     cursor: pointer;
+    color: green;
 
 
 }
 
 #postnewproduct{
     cursor: pointer;
+    color: green;
+
 }
 
 #gotoProductsPage{
     cursor: pointer;
+    color: green;
+
 }
 
 #username{
