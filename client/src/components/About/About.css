@@ -1,4 +1,21 @@
 .about{
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    /* width: 100%; */
+    margin: auto;
+    /* width: inherit; */
+    /* width: 100vw; */
 
+
+}
+
+.about-box{
+    background-color: rgb(159, 218, 198);
+    margin: auto;
+}
+
+#about-btn{
+    padding-bottom: 20px;
+    color: red;
+    border: 2px solid blue;
+    margin-top: 10px;
 }

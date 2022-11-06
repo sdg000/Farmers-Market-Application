@@ -81,10 +81,8 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* {isLoggedIn?<UserNavBar currentUser={currentUser} onLogout={handleLogout}/>:<NavBar/>} */}
-        {/* {isLoggedIn?null:<About/>} */}
         {currentFarmer? <UserNavBar currentFarmer={currentFarmer} onLogout={handleLogout} />:<NavBar/>}
-        {/* {currentUser.products? <FarmerAlert currentUser={currentUser}/>:null} */}
+        {/* <About/> */}
         <Routes>
         <Route exact path='/' element={<ProductPage allProducts={allProducts}/>}>
 

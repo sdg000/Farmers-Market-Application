@@ -5,7 +5,7 @@
     /* display: inline-block; */
     display: table-row;
     float: left;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 
     
 
@@ -42,8 +42,10 @@
     width: 95px;
     background-color: rgb(144, 184, 144);
     color: white;
-    border: none;
     margin-top: 5px;
+    border: 1px solid green;
+    border-radius: 10px;
+
 }
 
 #buy-product-btn:hover {
