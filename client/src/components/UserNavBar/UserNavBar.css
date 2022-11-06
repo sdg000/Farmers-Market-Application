@@ -23,3 +23,15 @@
 #postnewproduct{
     cursor: pointer;
 }
+
+#gotoProductsPage{
+    cursor: pointer;
+}
+
+#username{
+    /* border: 1px solid green;
+    border-radius: 10px;
+    width: 100px;
+    background-color: rgb(139, 187, 139); */
+    color: rgba(144, 235, 8, 0.877);
+}

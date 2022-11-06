@@ -20,6 +20,10 @@ function UserNavBar({currentFarmer, onLogout}){
 
     function goToFarmerPage(){
         navigate('/farmer-page')
+    }
+
+    function gotoProductsPage(){
+        navigate('/')
 
     }
 
@@ -39,7 +43,7 @@ function UserNavBar({currentFarmer, onLogout}){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" onClick={gotoProductsPage} id='gotoProductsPage'>Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" onClick={goToFarmerPage} id='gotofarmerpage'>My Products</a>
@@ -49,7 +53,7 @@ function UserNavBar({currentFarmer, onLogout}){
                 </li>
             </ul>
             <a id="nav-link" onClick={logout}>Signout</a>
-            <h2>{currentFarmer.username}</h2>
+            <h4 id='username'>{currentFarmer.username}</h4>
         </div>
     </nav>
     )
