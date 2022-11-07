@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: farmers_market_production
-  username: farmers_market
+  # database: farmers_market_production
+  # username: farmers_market
   password: <%= ENV["FARMERS_MARKET_DATABASE_PASSWORD"] %>
