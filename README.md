@@ -22,3 +22,8 @@ Backend:
 - NodeJS (v16), and npm
 - Heroku CLI
 - Postgresql
+
+
+WEB URL: 
+Application live on :  
+https://farmers-market.onrender.com
